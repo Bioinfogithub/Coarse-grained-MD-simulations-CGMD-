@@ -1,0 +1,15 @@
+; Martini 3 CGMD - Energy minimization
+; Validate against the actual system before production use.
+
+integrator      = steep
+emtol           = 10.0
+emstep          = 0.01
+nsteps          = 50000
+
+cutoff-scheme   = Verlet
+nstlist         = 20
+coulombtype     = shift
+rcoulomb        = 1.1
+rvdw            = 1.1
+rvdw-switch     = 0.9
+pbc             = xyz

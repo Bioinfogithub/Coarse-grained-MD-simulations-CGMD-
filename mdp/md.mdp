@@ -1,0 +1,35 @@
+; Martini 3 CGMD - Production simulation
+; Template for a 1 microsecond production run.
+; dt = 0.02 ps; 50,000,000 steps = 1 microsecond.
+; Validate parameters against the exact Martini 3 protocol used.
+
+integrator              = md
+dt                      = 0.02
+nsteps                  = 50000000
+
+nstxout-compressed      = 5000
+nstenergy               = 5000
+nstlog                  = 5000
+
+cutoff-scheme           = Verlet
+nstlist                 = 20
+coulombtype             = shift
+rcoulomb                = 1.1
+rvdw                    = 1.1
+rvdw-switch             = 0.9
+
+tcoupl                  = v-rescale
+tc-grps                 = System
+tau_t                   = 1.0
+ref_t                   = 300
+
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = isotropic
+tau_p                   = 12.0
+ref_p                   = 1.0
+compressibility         = 3e-4
+
+constraints             = none
+pbc                     = xyz
+
+gen_vel                 = no
